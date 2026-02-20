@@ -1,4 +1,4 @@
-import { stepCountIs, ToolLoopAgent, tool } from 'ai';
+import { stepCountIs, ToolLoopAgent } from 'ai';
 import { ollamaQwen3_4b_instruct_2507_q4_K_M } from './models.ts';
 import { tools } from './tools/index.ts';
 

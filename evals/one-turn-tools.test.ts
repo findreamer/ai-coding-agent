@@ -1,31 +1,27 @@
-import assert from 'node:assert';
-import { describe, it, mock } from 'node:test';
-import { generateText } from 'ai';
+import assert from 'node:assert/strict';
+import { describe, it } from 'node:test';
+import { stepCountIs, ToolLoopAgent } from 'ai';
+import { tools } from '@/tools/index.ts';
 import { ollamaQwen3_4b_instruct_2507_q4_K_M } from '../src/models.ts';
-import { getSystemDateTimeTool } from '../src/tools/get-system-data-time.ts';
+
+const agent = new ToolLoopAgent({
+  model: ollamaQwen3_4b_instruct_2507_q4_K_M,
+  stopWhen: stepCountIs(1),
+  tools: tools,
+});
 
 describe('One turn tools evals', async () => {
   it('should call get_system_date_time tool', async () => {
     const prompt = 'Wath is system current date time?';
-    const mockExecuteFn = mock.fn(async () => new Date().toLocaleString());
-    const mockGetSystemDateTimeTool = {
-      ...getSystemDateTimeTool,
-      execute: mockExecuteFn,
-    };
-    const { toolCalls } = await generateText({
-      model: ollamaQwen3_4b_instruct_2507_q4_K_M,
-      prompt: prompt,
-      tools: {
-        get_system_date_time: mockGetSystemDateTimeTool,
-      },
+
+    const { toolCalls } = await agent.generate({
+      prompt,
     });
 
     // assert
     // 断言工具调用次数为1
     assert.ok(toolCalls.length === 1);
     // 断言工具调用名称为get_system_date_time
-    assert.ok(toolCalls[0].toolName === 'get_system_date_time');
-    // 断言，mock函数被调用一次
-    assert.ok(mockExecuteFn.mock.calls.length === 1);
+    assert.ok(toolCalls[0]?.toolName === 'get_system_date_time');
   });
 });

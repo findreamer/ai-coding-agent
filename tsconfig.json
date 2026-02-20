@@ -48,6 +48,6 @@
     }
     // "rewriteImportExtensions": true
   },
-  "include": ["src"]
-  // 设置alias
+  "include": ["src", "evals"],
+  "exclude": ["node_modules"]
 }
