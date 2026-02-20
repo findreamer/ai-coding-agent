@@ -6,7 +6,8 @@
   "type": "module",
   "scripts": {
     "commit": "committier commit",
-    "start": "tsx src/main.ts"
+    "start": "tsx src/main.ts",
+    "dev": "tsx --watch src/main.ts "
   },
   "keywords": [],
   "author": "",
