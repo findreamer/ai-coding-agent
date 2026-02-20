@@ -7,7 +7,15 @@
     "indentStyle": "space",
     "formatWithErrors": true
   },
-  "linter": { "enabled": true, "rules": { "recommended": true } },
+  "linter": {
+    "enabled": true,
+    "rules": {
+      "recommended": true,
+      "style": {
+        "useConsistentTypeDefinitions": "info"
+      }
+    }
+  },
   "javascript": { "formatter": { "quoteStyle": "single" } },
   "assist": {
     "enabled": true,

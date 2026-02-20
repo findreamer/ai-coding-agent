@@ -39,7 +39,9 @@
     "noUncheckedSideEffectImports": true,
     "moduleDetection": "force",
     "skipLibCheck": true,
-    "resolveJsonModule": true
+    "resolveJsonModule": true,
+    "noEmit": true,
+    "allowImportingTsExtensions": true
     // "rewriteImportExtensions": true
   },
   "include": ["src"]
