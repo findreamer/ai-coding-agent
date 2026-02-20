@@ -41,8 +41,13 @@
     "skipLibCheck": true,
     "resolveJsonModule": true,
     "noEmit": true,
-    "allowImportingTsExtensions": true
+    "allowImportingTsExtensions": true,
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"]
+    }
     // "rewriteImportExtensions": true
   },
   "include": ["src"]
+  // 设置alias
 }
