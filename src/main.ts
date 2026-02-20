@@ -1,1 +1,1 @@
-export const name = "ai-coding-agent";
+console.log('hello world');
