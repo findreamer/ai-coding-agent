@@ -3,19 +3,16 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {
-    "commit": "committier commit"
-  },
+  "scripts": { "commit": "committier commit" },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "@biomejs/biome": "2.4.2",
     "@types/node": "^25.3.0",
+    "lefthook": "^2.1.1",
     "tsx": "^4.21.0",
     "typescript": "^5.9.3"
   },
-  "dependencies": {
-    "committier": "^0.2.3"
-  }
+  "dependencies": { "committier": "^0.2.3" }
 }
