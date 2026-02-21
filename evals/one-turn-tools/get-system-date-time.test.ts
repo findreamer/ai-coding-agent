@@ -2,7 +2,7 @@ import assert from 'node:assert/strict';
 import { describe, it } from 'node:test';
 import { stepCountIs, ToolLoopAgent } from 'ai';
 import { tools } from '@/tools/index.ts';
-import { ollamaQwen3_4b_instruct_2507_q4_K_M } from '../src/models.ts';
+import { ollamaQwen3_4b_instruct_2507_q4_K_M } from '../../src/models.ts';
 
 const agent = new ToolLoopAgent({
   model: ollamaQwen3_4b_instruct_2507_q4_K_M,
@@ -10,7 +10,7 @@ const agent = new ToolLoopAgent({
   tools: tools,
 });
 
-describe('One turn tools evals', async () => {
+describe('get_system_date_time tool', async () => {
   it('should call get_system_date_time tool', async () => {
     const prompt = 'Wath is system current date time?';
 

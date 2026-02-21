@@ -8,7 +8,7 @@
     "commit": "committier commit",
     "start": "tsx src/main.ts",
     "dev": "tsx --watch src/main.ts ",
-    "test": "tsx --test evals/*.test.ts"
+    "test": "tsx --test evals/**/*.test.ts"
   },
   "keywords": [],
   "author": "",

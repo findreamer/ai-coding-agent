@@ -1,3 +1,4 @@
+import fs from 'node:fs';
 import { tool } from 'ai';
 import z from 'zod';
 
@@ -10,4 +11,9 @@ export const readFileTool = tool({
   description:
     'Access and read the content of a file at the specified path. Use this tool when you need to read the content of a file.',
   inputSchema: readFileToolInputSchema,
+  execute: async () => {
+    // 读取文件内容
+    // const content = await fs.promises.readFile(path, 'utf8');
+    // return content;
+  },
 });
