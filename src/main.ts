@@ -1,8 +1,7 @@
 import { agent } from './agents.ts';
 
 const res = await agent.generate({
-  prompt: 'Wath is system current date time?',
+  prompt: '总结 package.json，并写入README.md文件 ',
 });
 
-console.log(res.toolCalls);
 console.log(res.text);
